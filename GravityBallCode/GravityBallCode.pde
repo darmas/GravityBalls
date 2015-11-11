@@ -1,18 +1,20 @@
-//declare variables
+//declare arrays
 int count=30;
 float[] x = new float[count];
 float[] y = new float[count];
 float[] velX = new float[count];
 float[] velY = new float[count];
 float[] diam = new float[count];
+
+//gravity is not array, but a variable
 int gravity=1;
 
 
-void setup() {
+void setup() {//settins run once
   //set size of canvas
   size(800, 600);
   int i=0;
-  while (i<count){
+  while (i<count){//variables have values
     x[i] = random(width);
     y[i] = random(height);
     velX[i] = 5;
@@ -22,14 +24,14 @@ void setup() {
 }
 }
 
-void draw() {
+void draw() {//settings run in loop
   //draw background to cover previous frame
   background(0);
-  for (int i=0; i<count;i++){
+  for (int i=0; i<count;i++){//for loop
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
     //add velocity
-    velY[i]+=gravity;
+    velY[i]+=gravity;//y velocity has gravity 
     x[i] += velX[i];
     y[i] += velY[i];
 
