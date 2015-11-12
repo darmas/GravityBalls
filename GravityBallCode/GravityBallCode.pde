@@ -31,7 +31,7 @@ void draw() {//settings run in loop
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
     //add velocity
-    velY[i]+=gravity;//y velocity has gravity 
+    velY[i]+=gravity;
     x[i] += velX[i];
     y[i] += velY[i];
 
@@ -46,6 +46,9 @@ void draw() {//settings run in loop
     y[i]=height-diam[i]/2;
   } else if (y[i] - diam[i]/2 <= 0) {
     velY[i] = abs(velY[i]);
+  }
+  if(y[i]+diam[i]/2==height){
+    velX[i]=0;
   }
   }
 }
