@@ -26,7 +26,7 @@ void setup() {//settins run once
 
 void draw() {//settings run in loop
   //draw background to cover previous frame
-  background(0);
+  background(frameCount%360,0,255);
   for (int i=0; i<count;i++){//for loop
     //draw ball
     ellipse(x[i], y[i], diam[i], diam[i]);
@@ -52,3 +52,8 @@ void draw() {//settings run in loop
   }
   }
 }
+  void keyPressed(){
+    if(keyCode==ESC){
+      exit();
+  }
+  }
